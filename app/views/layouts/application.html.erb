@@ -15,6 +15,9 @@
             Cart | Total items: <span class="cart-items"><%= cart_items %></span>
           <% end %>
         </li>
+        <% if current_user && current_user.admin %>
+          <li><%= link_to "Add Product", new_product_path %></li>
+        <% end %>
         <li><%= link_to "See all products", products_path %></li>
         <% if current_user %>
           <li><%= current_user.email %></li>

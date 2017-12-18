@@ -8,6 +8,13 @@
           <%= link_to product_path(product), remote: true do %>
             <h5><%= product.name %></h5>
             $<%= product.price %>
+            <div>
+              <small>
+                <% if current_user && current_user.admin %>
+                <%= link_to "Edit/Delete", product_path(product) %>
+                <% end %>
+              </small>
+            </div>
           <% end %>
         </div>
         <div class="product-hide" id= "product-hide-<%= product.id %>">

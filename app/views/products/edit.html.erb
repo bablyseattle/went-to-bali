@@ -1,0 +1,10 @@
+<h1>Edit Product</h1>
+
+<%= form_for @product do |f| %>
+  Name: <%= f.text_field :name %>
+  Description: <%= f.text_field :description %>
+  Price: <%= f.number_field :price %>
+  <%= f.submit "Submit" %>
+<% end %>
+
+<p><%= link_to "Return to product", product_path %></p>
