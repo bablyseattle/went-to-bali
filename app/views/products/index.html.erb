@@ -6,6 +6,8 @@
       <div class="col s4">
         <div id= "product-show-<%= product.id %>">
           <%= link_to product_path(product), remote: true do %>
+          <%= image_tag product.avatar.url(:medium) %>
+
             <h5><%= product.name %></h5>
             $<%= product.price %>
             <div>
@@ -19,6 +21,7 @@
         </div>
         <div class="product-hide" id= "product-hide-<%= product.id %>">
           <%= link_to product_path(product), remote: true do %>
+          <%= image_tag product.avatar.url(:medium) %>
             <h5><%= product.name %></h5>
             $<%= product.price %>
             <p>Description: <%= product.description %></p>

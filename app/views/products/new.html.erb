@@ -3,6 +3,7 @@
   <%= form_for @product do |f| %>
     Name: <%= f.text_field :name %>
     Description: <%= f.text_field :description %>
+    Image: <%= f.file_field :avatar%>
     Price: <%= f.number_field :price %>
   <%= f.submit "Submit" %>
 
