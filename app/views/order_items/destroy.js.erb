@@ -1,0 +1,3 @@
+$('#order-item-<%= @item.id %>').remove();
+$('.cart-price').html("<%= number_to_currency current_order.total_price %>");
+$('.cart-items').html("<%= cart_items %>");

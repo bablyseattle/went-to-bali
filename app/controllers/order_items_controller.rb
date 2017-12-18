@@ -6,14 +6,14 @@ class OrderItemsController < ApplicationController
     if @order.save
       session[:order_id] = @order.id
       respond_to do |format|
-        format.html { redirect_to products_path }
         format.js
       end
-    else
-      redirect_to products_path
     end
   end
 
+  def show
+  end
+  
   def update
     @order = current_order
     @item = @order.order_items.find(params[:id])
@@ -24,9 +24,12 @@ class OrderItemsController < ApplicationController
   def destroy
     @order = current_order
     @item = @order.order_items.find(params[:id])
+
     @item.destroy
     @order.save
-    redirect_to cart_path
+    respond_to do |format|
+      format.js { render layout: false }
+    end
   end
 
   private
